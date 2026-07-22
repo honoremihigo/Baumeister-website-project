@@ -11,9 +11,9 @@ const navFunction = () => {
         }
         const currentSrc = button.getAttribute('src')
         if (currentSrc.includes("Group 5.svg")) {
-            button.setAttribute('src', "../../Images/cancel_svg.svg")
+            button.setAttribute('src', "../../public/Images/cancel_svg.svg")
         } else {
-            button.setAttribute('src', "../../Images/Group 5.svg")
+            button.setAttribute('src', "../../public/Images/Group 5.svg")
         }
     })
 }
