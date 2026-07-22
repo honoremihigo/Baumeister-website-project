@@ -7,16 +7,17 @@
     <title>Website project template</title>
   </head>
   <script>
-    const loadComponents = (id, url) => {
+    const loadComponents = (id, url, callback) => {
       fetch(url)
         .then((response) => response.text())
         .then((html) => {
           document.getElementById(id).innerHTML = html;
+          if(callback) callback()
         });
     };
 
     window.onload = () => {
-        loadComponents('header', 'src/sections/header.html');
+        loadComponents('header', 'src/sections/header.html', navFunction);
         loadComponents('hero', 'src/sections/hero.html');
         loadComponents('about', 'src/sections/about.html');
         loadComponents('contact', 'src/sections/contact.html');
@@ -32,5 +33,6 @@
     <div id="strategy"></div>
     <div id="collaborators"></div>
     <div id="footer"></div>
+    <script src="./script.js" ></script>
 </body>
 </html>
