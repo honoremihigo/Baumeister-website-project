@@ -7,11 +7,12 @@
     <title>Website project template</title>
   </head>
   <script>
-    const loadComponents = (id, url) => {
+    const loadComponents = (id, url, callback) => {
       fetch(url)
         .then((response) => response.text())
         .then((html) => {
           document.getElementById(id).innerHTML = html;
+          if(callback) callback()
         });
     };
 
@@ -31,6 +32,6 @@
     <div id="strategy"></div>
     <div id="collaborators"></div>
     <div id="footer"></div>
-    <div id="about"></div>
-  </body>
+    <script src="./script.js" ></script>
+</body>
 </html>
