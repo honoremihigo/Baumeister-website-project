@@ -1,16 +1,18 @@
 const navFunction = () => {
     const button = document.getElementById("menu-btn")
     const menu = document.getElementById("menu")
+    const header = document.getElementById("header")
     if(!button) return
     button.addEventListener("click", () => {
-        const hero = document.getElementById("hero-section")
+        const content = header ? header.nextElementSibling : null
         console.log("clicked")
         if(menu) {
             menu.classList.toggle("hidden")
             menu.classList.toggle("flex")
             menu.classList.toggle("pointer-events-none")
-            if (hero) {
-                hero.style.marginTop = hero.style.marginTop ? "" : "16rem"
+            if (content) {
+                content.style.marginTop = content.style.marginTop ? "" : "16rem"
+                content.classList.toggle("transition-all")
             } else {
                 console.log('navFunction: #hero-section not found at click time')
             }
