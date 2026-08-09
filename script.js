@@ -10,6 +10,7 @@ const navFunction = () => {
             menu.classList.toggle("hidden")
             menu.classList.toggle("flex")
             menu.classList.toggle("pointer-events-none")
+            menu.classList.toggle('text-primary')
             if (content) {
                 content.style.marginTop = content.style.marginTop ? "" : "16rem"
                 content.classList.toggle("transition-all")
