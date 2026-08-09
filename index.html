@@ -12,26 +12,28 @@
         .then((response) => response.text())
         .then((html) => {
           document.getElementById(id).innerHTML = html;
-          if(callback) callback()
+          if (callback) callback();
         });
     };
 
     window.onload = () => {
-      loadComponents("header", "src/sections/header.html");
+      loadComponents("header", "src/sections/header.html", navFunction);
       loadComponents("hero", "src/sections/hero.html");
       loadComponents("about", "src/sections/about.html");
+      loadComponents("yellow", "src/sections/yellow.html");
       loadComponents("strategy", "src/sections/strategy.html");
       loadComponents("collaborators", "src/sections/collaborators.html");
       loadComponents("footer", "src/sections/footer.html");
     };
   </script>
   <body>
-    <div id="header"></div>
+    <div id="header" class="sticky top-0 z-50"></div>
     <div id="hero"></div>
     <div id="about"></div>
+    <div id="yellow" class="sticky -top-[5rem] z-40"></div>
     <div id="strategy"></div>
     <div id="collaborators"></div>
     <div id="footer"></div>
-    <script src="./script.js" ></script>
-</body>
+    <script src="./script.js"></script>
+  </body>
 </html>
